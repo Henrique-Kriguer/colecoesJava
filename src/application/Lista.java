@@ -11,6 +11,74 @@ import java.util.Scanner;
 public class Lista {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		
+		
+/*
+ * Utilizando listas, faça um orograma que faça 5 perguntas para uma pessoa sobre um crime :
+ * 1. Conhece a vitima?
+ * 2. Teve contato físico com ela?
+ * 3. Mora perto da vitima?
+ * 4. Teve relação comercial ou afetiva com a vitima?
+ * 5. Esteve presente no local do crime?
+ */
+		List<String> respostas = new ArrayList<>();
+		System.out.println("Responda as perguntas somente com S ou N ");
+		System.out.println("------------------------------");
+		System.out.println("Conhece a vitima?");
+		String resp = sc.next();
+		respostas.add(resp.toLowerCase());
+		
+				
+		System.out.println("Teve contato físico com ela?");
+		resp = sc.next();
+		respostas.add(resp.toLowerCase());
+		
+		System.out.println("Mora perto da vitima?");
+		resp = sc.next();
+		respostas.add(resp.toLowerCase());
+		
+		System.out.println("Teve relação comercial ou afetiva com a vitima?");
+		resp = sc.next();
+		respostas.add(resp.toLowerCase());
+		
+		System.out.println("Esteve presente no local do crime?");
+		resp = sc.next();
+		respostas.add(resp.toLowerCase());
+		System.out.println("------------------------------");
+		System.out.println(respostas);
+		
+		int count = 0;
+		Iterator<String> contador = respostas.iterator();
+		while(contador.hasNext()) {
+			 resp = contador.next();
+			if(resp.contains("s")) {
+				count ++;
+			}
+		}
+		
+		switch(count) {
+		case 3:
+			System.out.println("suspeito nível leve");
+			break;
+			
+		case 4:
+			System.out.println("suspeito nível moderado");
+			break;
+			
+		case 5:
+			System.out.println("suspeito nível alto");
+			break;
+			
+		default:
+			System.out.println("não é suspeito");
+			break;
+			
+		}
+		
+		
+		
+		
+/*
 		List <Double> temperatura = new ArrayList<>();
 
 		int count = 0;
@@ -67,7 +135,8 @@ public class Lista {
 			}
 			
 		}
-
+*/
+		
 /*
  *  1- Crie uma lista e adicione sete notas
 		
